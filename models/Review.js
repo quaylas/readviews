@@ -2,7 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Review extends Model {
-// if we do chose to give voting options we will need code here
 static upvote(body, models) {
     return models.Vote.create({
       user_id: body.user_id,
@@ -17,12 +16,12 @@ static upvote(body, models) {
           'book_Title',
           'book_Cover',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.Id = vote.post_id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.Id = vote.review_Id)'), 'vote_count']
         ],
         include: [
           {
             model: models.Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'review_Id', 'created_at'],
+            attributes: ['id', 'comment_text', 'User_id', 'review_Id', 'created_at'],
             include: {
               model: models.User,
               attributes: ['username']
