@@ -64,7 +64,7 @@ Review.init(
       underscored: true,
       modelName: 'Review'
     }
- 
+
 
 );
 
