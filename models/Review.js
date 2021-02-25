@@ -48,12 +48,12 @@ Review.init(
                 key: 'id'
             }
         },
+
         book_Title: {
             type: DataTypes.STRING,
             allowNull: false,
 
         },
-       
         author: {
             type: DataTypes.STRING,
             allowNull: false,
