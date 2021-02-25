@@ -28,14 +28,14 @@ Book.init(
         allowNull: false
 
     },
-      sequelize,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'Review'
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Book'
 
 
 
     }
-      
+    
 );
 module.exports = Book
