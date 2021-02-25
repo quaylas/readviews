@@ -53,7 +53,7 @@ Review.init(
             allowNull: false,
 
         },
-       
+      
         author: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -64,7 +64,7 @@ Review.init(
       underscored: true,
       modelName: 'Review'
     }
- 
+
 
 );
 
