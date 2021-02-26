@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote, Comment, Review} = require('../../models');
+const { User, Vote, Comment, Review } = require('../../models');
 
 //Create User 
 router.post('/', (req, res) => {
@@ -119,7 +119,7 @@ router.put('/:id', (req, res) => {
       include: [
         {
           model: Review,
-          attributes: ['id', 'user_id', 'book_id', 'created_at']
+          attributes: ['id', 'user_id', 'review_title', 'review_text', 'book_id', 'created_at']
         },
         {
           model: Comment,
@@ -131,7 +131,7 @@ router.put('/:id', (req, res) => {
         },
         {
           model: Review,
-          attributes: ['Review_id'],
+          attributes: ['id'],
           through: Vote,
           as: 'voted_posts'
         }
