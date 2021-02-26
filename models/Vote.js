@@ -17,10 +17,10 @@ Vote.init(
           key: 'id'
         }
       },
-      review_Id: {
+      review_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'Review',
+          model: 'review',
           key: 'id'
         }
       }

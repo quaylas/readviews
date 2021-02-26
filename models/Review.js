@@ -1,27 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
+const { Book } = require('.');
 const sequelize = require('../config/connection');
 
 class Review extends Model {
 static upvote(body, models) {
     return models.Vote.create({
       user_id: body.user_id,
-      review_Id: body.review_Id
+      review_id: body.review_id
     }).then(() => {
       return Review.findOne({
         where: {
-          id: body.review_Id
+          id: body.review_id
         },
         attributes: [
           'id',
-          'book_Title',
-          'book_Cover',
+          'book_title',
+          'book_cover',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.Id = vote.review_Id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)'), 'vote_count']
         ],
         include: [
           {
             model: models.Comment,
-            attributes: ['id', 'comment_text', 'User_id', 'review_Id', 'created_at'],
+            attributes: ['id', 'comment_text', 'user_id', 'review_id', 'created_at'],
             include: {
               model: models.User,
               attributes: ['username']
@@ -41,6 +42,17 @@ Review.init(
             primaryKey: true,
             autoIncrement: true
         },
+        review_title: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            len: [50]
+          }
+        },
+        review_text: {
+          type: DataTypes.TEXT,
+          allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -48,23 +60,18 @@ Review.init(
                 key: 'id'
             }
         },
-        book_Title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-
+        book_id: {
+          type: DataTypes.INTEGER,
+          references: {
+            model: 'book',
+            key: 'id'
+          }
         },
-      
-        author: {
-            type: DataTypes.STRING,
-            allowNull: false,
-          
-    },
       sequelize,
       freezeTableName: true,
       underscored: true,
-      modelName: 'Review'
+      modelName: 'review'
     }
-
 
 );
 

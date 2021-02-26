@@ -31,11 +31,8 @@ Book.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Book'
-
-
-
+        modelName: 'book'
     }
     
 );
-module.exports = Book
+module.exports = Book;
