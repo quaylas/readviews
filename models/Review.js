@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const { Book } = require('.');
 const sequelize = require('../config/connection');
 
 class Review extends Model {
@@ -53,16 +52,16 @@ Review.init(
           type: DataTypes.TEXT,
           allowNull: false,
         },
-        is_public: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: true
-        },
-        comments_enabled: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: true
-        },
+        // is_public: {
+        //   type: DataTypes.BOOLEAN,
+        //   allowNull: false,
+        //   defaultValue: true
+        // },
+        // comments_enabled: {
+        //   type: DataTypes.BOOLEAN,
+        //   allowNull: false,
+        //   defaultValue: true
+        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

@@ -1,8 +1,8 @@
 const User = require('./User');
 const Comment = require('./Comment');
 const Review = require('./Review');
-const Book = require('./Book.js');
-const Vote = require('./Vote.js');
+const Book = require('./Book');
+const Vote = require('./Vote');
 
 //data relations 
 
@@ -75,12 +75,6 @@ Book.hasMany(Review, {
 Review.belongsTo(Book, {
     foreignKey: 'book_id'
 });
-
-
-
-
-
-
 
 
 module.exports = { User, Review, Vote,  Book, Comment };
