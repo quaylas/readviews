@@ -18,63 +18,63 @@ Review.belongsTo(User, {
 User.belongsToMany(Review, {
     through: Vote,
     as: 'voted_reviews',
-    foreignKey: 'user_id',
+    foreignKey: 'User_id',
     onDelete: 'SET NULL'
 });
 
 Review.belongsToMany(User, {
     through: Vote,
-    as: 'voted_posts',
-    foreignKey: 'review_id',
+    as: 'voted_reviews',
+    foreignKey: 'Review_id',
     onDelete: 'SET NULL'
 });
 
 Vote.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'User_id',
     onDelete: 'SET NULL'
 });
 
 Vote.belongsTo(Review, {
-    foreignKey: 'review_id',
+    foreignKey: 'Review_id',
     onDelete: 'SET NULL'
 });
 
 User.hasMany(Vote, {
-    foreignKey: 'user_id'
+    foreignKey: 'User_id'
 });
 
 Review.hasMany(Vote, {
-    foreignKey: 'review_id'
+    foreignKey: 'Review_id'
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'review_id',
+    foreignKey: 'Review_id',
     onDelete: 'SET NULL'
 });
 
 Comment.belongsTo(Review, {
-    foreignKey: 'post_id',
+    foreignKey: 'Comment_id',
     onDelete: 'SET NULL'
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id',
+    foreignKey: 'User_id',
     onDelete: 'SET NULL'
 });
 
 Review.hasMany(Comment, {
-    foreignKey: 'review_id'
+    foreignKey: 'Review_id'
 });
 
  //Book relations 
 
- Book.hasMany(Review, {
-     foreignKey: 'book_id'
- });
+Book.hasMany(Review, {
+    foreignKey: 'book_id'
+});
 
- Review.belongsTo(Book, {
-     foreignKey: 'book_id'
- });
+Review.belongsTo(Book, {
+    foreignKey: 'book_id'
+});
 
 
 
