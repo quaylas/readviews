@@ -1,7 +1,12 @@
 const router = require('express').Router();
 const { User, Vote, Comment, Review } = require('../../models');
 
-//Create User 
+
+
+
+
+
+ //Create User 
 router.post('/', (req, res) => {
     // expects username:, email: , password: 
     User.create({
@@ -126,14 +131,14 @@ router.put('/:id', (req, res) => {
           attributes: ['id', 'comment_text', 'created_at'],
           include: {
               model: Review,
-              attributes: ['book_id']
+              attributes: ['book_id'] // might need to reference review title instead
           }
         },
         {
           model: Review,
           attributes: ['id'],
           through: Vote,
-          as: 'voted_posts'
+          as: 'voted_reviews'
         }
       ]
     })
@@ -160,7 +165,7 @@ router.put('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
       });
-  });
+  }); 
 
   
   module.exports = router;
