@@ -4,9 +4,9 @@ const reviewdata = [
     {
         user_id: 1,
         book_id: 1,
-        book_Title: 'Ring out, wild bells',
-        author: 'Alfred, Lord Tennyson'
-    }
+        review_title: 'Love Alfred',
+        review_text: 'I just can\'t get over how excellent lord tennyson is'
+    },
 ]
 
 const seedReviews = () => Book.bulkCreate(reviewData);
