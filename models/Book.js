@@ -10,6 +10,8 @@ Book.init(
     id: {
     type: DataTypes. INTEGER,
     allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
     
     },
     title: {
@@ -28,11 +30,14 @@ Book.init(
         allowNull: false
 
     },
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'book'
-    }
+},
+{
+
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'book'
+}
     
 );
 
