@@ -40,11 +40,20 @@ User.init(
     },
     {
       hooks: {
+
+        // it needs to run an async function for the hook the commented out code is me using a promise instead. It doesn't work with the hashing, so I recoded it with an async
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
         
-          beforeCreate(newUserData) {
+
+      
+
+         /* beforeCreate(newUserData) {
             new Promise(function(resolve, reject){
           
-          bcrypt.hash(newUserData.password, 10)
+              bcrypt.hash(newUserData.password, 10)
           .then(newpassword => {
             newUserData.password = newpassword;
             Promise.resolve
@@ -53,9 +62,9 @@ User.init(
           return newUserData;
 
          })
-        },
+        }, */
   
-         beforeUpdate(updatedUserData) {
+         /* beforeUpdate(updatedUserData) {
           
           new Promise(function(resolve, reject){
          
@@ -68,7 +77,13 @@ User.init(
 
           }).catch(err => console.log(err))  
         }
-      },
+      }, */ 
+
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
+      }
+    },
       sequelize,
       timestamps: false,
       freezeTableName: true,

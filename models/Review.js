@@ -20,7 +20,7 @@ static upvote(body, models) {
           'user_id',
           'book_id',
           'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE id = vote.review_id)'), 'vote_count']
         ],
         include: [
           {
