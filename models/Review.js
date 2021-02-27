@@ -13,8 +13,12 @@ static upvote(body, models) {
         },
         attributes: [
           'id',
-          'book_title',
-          'book_cover',
+          'review_title',
+          'review_text',
+          'is_public',
+          'comments_enabled',
+          'user_id',
+          'book_id',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)'), 'vote_count']
         ],

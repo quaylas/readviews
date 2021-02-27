@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             }
         ],
-        order: [['created_at', 'DESC']]
+        order: [['vote_count', 'DESC']]
     })
     .then(dbReviewData => res.json(dbReviewData))
     .catch(err => {
@@ -83,6 +83,17 @@ router.post('/', withAuth, (req, res)=> {
         user_id: req.session.user_id
     })
     .then(dbReviewData => res.json(dbReviewData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// upvote review
+router.put('/upvote', (req, res)  => {
+    // expects {user_id:, review_id}
+    Review.upvote(req.body,  { Vote, Review, User })
+    .then(updatedVoteData => res.json(updatedVoteData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
