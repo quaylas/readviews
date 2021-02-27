@@ -67,13 +67,12 @@ User.hasMany(Comment, {
 });
 
 
-/*
+
 
 Review.hasMany(Comment, {
     foreignKey: 'review_id'
 });
 
-*/
 
  //Book relations 
 

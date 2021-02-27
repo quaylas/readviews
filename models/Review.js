@@ -45,7 +45,7 @@ Review.init(
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [50]
+            len: [1,50]
           }
         },
         review_text: {
