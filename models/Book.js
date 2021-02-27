@@ -8,8 +8,10 @@ class Book extends Model {
 Book.init(
 {
     id: {
-    type: DataTypes. INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
     
     },
     title: {
@@ -20,7 +22,7 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            isURL: true
+            isUrl: true
         }
     },
     author: {
@@ -28,11 +30,15 @@ Book.init(
         allowNull: false
 
     },
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'book'
-    }
+},
+{
+
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'book'
+}
     
 );
+
 module.exports = Book;

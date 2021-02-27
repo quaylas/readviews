@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const { Book } = require('.');
 const sequelize = require('../config/connection');
 
 class Review extends Model {
@@ -14,8 +13,12 @@ static upvote(body, models) {
         },
         attributes: [
           'id',
-          'book_title',
-          'book_cover',
+          'review_title',
+          'review_text',
+          'is_public',
+          'comments_enabled',
+          'user_id',
+          'book_id',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)'), 'vote_count']
         ],
@@ -35,7 +38,7 @@ static upvote(body, models) {
 }
 
 Review.init(
-    {
+  {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -46,7 +49,7 @@ Review.init(
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [50]
+            len: [1,50]
           }
         },
         review_text: {
@@ -77,6 +80,8 @@ Review.init(
             key: 'id'
           }
         },
+    },
+    {
       sequelize,
       freezeTableName: true,
       underscored: true,
