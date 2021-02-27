@@ -77,13 +77,13 @@ Review.hasMany(Comment, {
 
  //Book relations 
 
-/*Book.hasMany(Review, {
+Book.hasMany(Review, {
     foreignKey: 'book_id'
 });
 
 Review.belongsTo(Book, {
     foreignKey: 'book_id'
-}); */
+});
 
 
 module.exports = { User, Review, Vote,  Book, Comment };

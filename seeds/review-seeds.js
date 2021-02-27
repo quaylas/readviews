@@ -1,4 +1,5 @@
-const Review = require('../models');
+const sequelize = require('../config/connection');
+const { Review, Book, User } = require('../models');
 
 const reviewdata = [
     {
@@ -35,6 +36,6 @@ const reviewdata = [
     },
 ]
 
-const seedReviews = () => Book.bulkCreate(reviewData);
+const seedReviews = () => Review.bulkCreate(reviewdata);
 
 module.exports = seedReviews;

@@ -22,7 +22,7 @@ Book.init(
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            isURL: true
+            isUrl: true
         }
     },
     author: {

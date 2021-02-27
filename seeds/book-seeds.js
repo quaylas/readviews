@@ -1,4 +1,5 @@
-const Book = require('../models');
+const sequelize = require('../config/connection');
+const { Book } = require('../models');
 
 const bookdata = [
     {
@@ -24,7 +25,7 @@ const bookdata = [
         cover: 'http://covers.openlibrary.org/b/id/2766106-S.jpg',
         author: 'SFX Fantasy'
 
-    },
+    }
 ];
 
 const seedBooks = () => Book.bulkCreate(bookdata);
