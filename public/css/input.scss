@@ -1,11 +1,15 @@
 
-// $font-stack:    Monospace;
+$font-stack:    Monospace;
 
 
-// body {
-//   font: 100% $font-stack;
-//   color: $primary-color;
-// }
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+* {
+    text-align: center;
+}
 
 
 nav {
