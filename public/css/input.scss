@@ -1,19 +1,32 @@
-mix.sass('resources/sass/app.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
-    })
-    .sass('resources/sass/app2.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
-    })
-
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: yellow;
+
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }
+
+
+nav {
+  ul {
+    margin: 5;
+    padding: 5;
+    list-style: none;
+    font-size: large;
+  }
+  h1 {
+      font-weight: 200
+      font-size;
+  }
+
+}
+
+
+
+header {
+
+}
+
+
+
