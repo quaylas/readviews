@@ -1,22 +1,12 @@
 <ul>
   {{#each review}}
   <li>
-    <p>Reviews: {{reviews}}</p>
-    <p>Liked Books: {{books}}</p>
+    <p>Title: {{review_title}}</p>
+    {{!-- <p>Comments: {{comments}}</p> --}}
+    <p>Date: {{format_date created_at}}</p>
   </li>
   {{/each}}
 </ul>
 
-<!--- change this --->
-<ul>
-  {{#each book}}
-  {{#if reviewed}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Author: {{author}}</p>
-    <p>Review: {{reviews}}</p>
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
+
 

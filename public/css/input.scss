@@ -1,11 +1,11 @@
 
-$font-stack:    Helvetica, sans-serif;
+// $font-stack:    Monospace;
 
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}
+// body {
+//   font: 100% $font-stack;
+//   color: $primary-color;
+// }
 
 
 nav {
@@ -13,31 +13,41 @@ nav {
     margin: 5;
     padding: 5;
     list-style: none;
-    font-size: large;
+    text-align: center;
   }
   h1 {
-      color: orange;
       font-size: 20px;
+      text-align: center;
     
   }
 
 }
 
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li { display: inline-block; }
-
-  a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
+.footer {
+    padding: 1.5rem;
+    text-align: center;
 }
+
+/* Media query for widths up to 575px  */
+@media screen and (max-width: 575px) {
+    .header {
+        padding-top: 10px;
+        font-size: 1.2rem;
+    }
+    .hero-body h1 {
+        font-size: 2rem !important;
+    }
+    .title {
+        font-size: 1.75rem;
+    }
+    input[type="text" i] {
+        width: 80%;
+        border-radius: .25rem;
+        padding: 10px 5px;
+    }
+    li {
+        padding: 7px 0;
+    }
 
 
 

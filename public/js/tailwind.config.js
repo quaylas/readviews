@@ -1,15 +1,15 @@
-const colors = require('tailwindcss/colors')
+// const colors = require('tailwindcss/colors')
 
-module.exports = {
-    theme: {
-      extend: {
-        colors: {
-          'yellow': colors.lightBlue,
-          cyan: colors.yellow,
-        },
-      },
-    },
-    variants: {},
-    plugins: [],
-  }
+// module.exports = {
+//     theme: {
+//       extend: {
+//         colors: {
+//           'yellow': colors.lightBlue,
+//           cyan: colors.yellow,
+//         },
+//       },
+//     },
+//     variants: {},
+//     plugins: [],
+//   }
   
