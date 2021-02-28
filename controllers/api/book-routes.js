@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
+const { Op } = require('sequelize');
 const { User, Vote, Comment, Review, Book } = require('../../models');
 
 // get all books
@@ -49,6 +50,66 @@ router.get('/:id', (req, res) => {
     .then(dbBookData => {
         if(!dbBookData) {
             res.status(404).json({ message: 'No book found with this id!'});
+        }
+        res.json(dbBookData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// search books by title
+router.get('/title/:query', (req, res) => {
+    Book.findAll({
+        where: {
+            title: {
+                [Op.substring]: req.params.query
+            }
+        },
+        attributes: [
+            'id',
+            'title',
+            'cover',
+            'author',
+            [sequelize.literal('(SELECT COUNT(*) FROM review WHERE book.id = review.book_id)'),'review_count']
+        ],
+        order: [['title','ASC']]
+    })
+    .then(dbBookData => {
+        if(!dbBookData) {
+            res.status(404).json({message: 'We didn\'t find any books that matched your search!'});
+            return;
+        }
+        res.json(dbBookData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// search books by author
+router.get('/author/:query', (req, res) => {
+    Book.findAll({
+        where: {
+            author: {
+                [Op.substring]: req.params.query
+            }
+        },
+        attributes: [
+            'id',
+            'title',
+            'cover',
+            'author',
+            [sequelize.literal('(SELECT COUNT(*) FROM review WHERE book.id = review.book_id)'),'review_count']
+        ],
+        order: [['title','ASC']]
+    })
+    .then(dbBookData => {
+        if(!dbBookData) {
+            res.status(404).json({message: 'We didn\'t find any books that matched your search!'});
+            return;
         }
         res.json(dbBookData);
     })
