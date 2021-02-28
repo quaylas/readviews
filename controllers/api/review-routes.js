@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { User, Vote, Comment, Review, Book } = require('../../models');
 const withAuth =  require('../../utils/auth');
 
-// get all reviews, sorted by most recent
+// get all reviews, sorted by vote count
 router.get('/', (req, res) => {
     console.log('---------------');
     Review.findAll({
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             }
         ],
-        order: [['vote_count', 'DESC']]
+        order: [['created_at', 'DESC']]
     })
     .then(dbReviewData => res.json(dbReviewData))
     .catch(err => {
@@ -64,6 +64,36 @@ router.get('/:id', (req, res) => {
     .then(dbReviewData => {
         if(!dbReviewData) {
             res.status(404).json({ message: 'No review found with this id!'});
+            return;
+        }
+        res.json(dbReviewData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// get all reviews for one user 
+router.get('/user/:query', (req, res) => {
+    Review.findAll({
+        where: {
+            user_id: {
+                [Op.substring]: req.params.query
+            }
+        },
+        attributes: [
+            'id',
+            'title',
+            'cover',
+            'author',
+            [sequelize.literal('(SELECT COUNT(*) FROM review WHERE book.id = review.book_id)'),'review_count']
+        ],
+        order: [['title','ASC']]
+    })
+    .then(dbReviewData => {
+        if(!dbReviewData) {
+            res.status(404).json({message: 'We didn\'t find any reviews for that user!'});
             return;
         }
         res.json(dbReviewData);
