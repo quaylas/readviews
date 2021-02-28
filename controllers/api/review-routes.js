@@ -74,6 +74,36 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// get all reviews for one user 
+router.get('/user/:query', (req, res) => {
+    Review.findAll({
+        where: {
+            user_id: {
+                [Op.substring]: req.params.query
+            }
+        },
+        attributes: [
+            'id',
+            'title',
+            'cover',
+            'author',
+            [sequelize.literal('(SELECT COUNT(*) FROM review WHERE book.id = review.book_id)'),'review_count']
+        ],
+        order: [['title','ASC']]
+    })
+    .then(dbReviewData => {
+        if(!dbReviewData) {
+            res.status(404).json({message: 'We didn\'t find any reviews for that user!'});
+            return;
+        }
+        res.json(dbReviewData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 // create review
 router.post('/',  /*withAuth, */ (req, res)=> {
     // expects {review_title: "this is the title", review_text: "this is the review", user_id: 1, book_id: 1}
