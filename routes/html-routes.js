@@ -12,7 +12,11 @@ app.get('/login', (req, res) => {
 });
 app.get('/signup', (req, res) => {
     res.render('./layouts/signup');
-})
+});
+
+app.get('/dashboard/', (req, res) => {
+    res.render('./layouts/dashboard');
+});
+
 
 }
-

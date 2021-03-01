@@ -34,11 +34,11 @@ router.post('/login', (req, res) => {
     // expects email:, password:
     User.findOne({
       where: {
-        email: req.body.email
+        password: req.body.password
       }
     }).then(dbUserData => {
       if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that email address!' });
+        res.status(400).json({ message: 'No user with that Username!' });
         return;
       }
   
