@@ -1,32 +1,32 @@
-// buttons, grid or flexbox etc // 
+// contains all button, review form and user form styling // 
 
-.loginButton {
-    color: $primaryColor3;
-    border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
+.user-form {
+      width: 35%;
+      border-radius: .25rem;
+      padding: 10px 5px;
+      margin: 0 auto;
+      text-align: right;
+      button {
+      background-color: $primaryColor1;
+      :hover {
+          color: $primaryColor1;
+          opacity: 0.6;
+      }
+    }
   }
-
-  .signupButton { 
-        color: $primaryColor3;
-        border: none;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-      
-  }
-
-  .logoutButton {
-      color: $primaryColor3;
+  
+  .navbar {
+      margin: 0 auto 20px;
       border: none;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 14px;   
+      background: none;
+      color: $primaryColor3;
+      font-size: 18px;
+      cursor: pointer;
+      &.navbar {
+        margin: 0 10px 10px;
+        background: $primaryColor1;
+        :hover {
+          color: $primaryColor3;
+        }
+      }
   }
