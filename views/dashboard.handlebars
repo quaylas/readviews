@@ -1,13 +1,3 @@
-<section class='section'>
-  <h2 class='title'>Add a Review</h2>
-  <form class='new-review-form'>
-    <input class='input text' type='text' id='review-title' name='review-title' placeholder='Title' />
-    <input class='input text' type='text' id='review-text' name='review-text' placeholder='Go ahead. Make your day.' />
-    <input class='input checkbox' type='checkbox' id='is-public' name='is-public' value='is_public'><label for='is-public'>Make this review public</label>
-    <input class='input checkbox' type='checkbox' id='comments-enabled' name='comments-enabled' value='comments-enabled'><label for='comments-enabled'>Allow comments on this review</label>
-    <button  class='button' type='submit' >Publish</button>
-  </form>
-</section>
 
 {{#if reviews.length}}
 <section class='section'>
@@ -24,6 +14,3 @@
 </ul>
 </section>
 {{/if}}
-
-
-<script src='/javascript/add-review.js'></script>
