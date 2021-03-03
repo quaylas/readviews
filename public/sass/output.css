@@ -1,18 +1,31 @@
-/* Error: expected ";".
- *    ,
- * 10 |     background-color: $primary_1 !global;
- *    |                                  ^
- *    '
- *   public\sass\_layouts.scss 10:34  @import
- *   public\sass\main.scss 18:9       root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a    \2577 \a 10 \2502      background-color: $primary_1 !global;\a    \2502                                   ^\a    \2575 \a   public\\sass\\_layouts.scss 10:34  @import\a   public\\sass\\main.scss 18:9       root stylesheet';
+h1 {
+  font-weight: 100;
+  text-align: center;
+  color: #b2ad7f;
 }
+
+.main-header {
+  background-color: #a2b9bc;
+}
+
+.loginButton {
+  color: #878f99;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.signupButton {
+  color: #878f99;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=output.css.map */
