@@ -1,1 +1,31 @@
 // buttons, grid or flexbox etc // 
+
+.loginButton {
+            border: none;
+            color: $primaryColor3;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+}
+
+.submitButton {
+      border: none;
+      color: $primaryColor3;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
+
+.logoutButton {
+      border: none;
+      color: $primaryColor3;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
