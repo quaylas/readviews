@@ -8,11 +8,13 @@ module.exports = function (app)
     res.render('index');
   });
 app.get('/login', (req, res) => {
+    
     res.render('./layouts/login');
 });
 app.get('/signup', (req, res) => {
+    
     res.render('./layouts/signup');
-})
+});
 
 }
 
