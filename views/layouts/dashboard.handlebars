@@ -1,25 +1,16 @@
-<button>Create Review</button>
 
-
-<ul>
-  {{#each review}}
-  <li>
-    <p>Reviews: {{reviews}}</p>
-    <p>Liked Books: {{books}}</p>
-  </li>
-  {{/each}}
-</ul>
-
-<!--- change this --->
+{{#if reviews.length}}
+<section class='section'>
 <ul>
   {{#each book}}
   {{#if reviewed}}
   <li>
     <p>Title: {{title}}</p>
     <p>Author: {{author}}</p>
-    <p>Review: {{reviews}}</p>
+    <p>Review: {{review_title}}</p>
   </li>
   {{/if}}
   {{/each}}
 </ul>
-
+</section>
+{{/if}}
