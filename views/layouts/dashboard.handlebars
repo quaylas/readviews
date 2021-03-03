@@ -1,18 +1,16 @@
 
-<div>
-<button type="submit">Log Out</button>
-    
-</div>
+{{#if reviews.length}}
+<section class='section'>
 <ul>
-  {{#each review}}
+  {{#each book}}
+  {{#if reviewed}}
   <li>
-    <p>Title: {{review_title}}</p>
-    {{!-- <p>Comments: {{comments}}</p> --}}
-    <p>Date: {{format_date created_at}}</p>
+    <p>Title: {{title}}</p>
+    <p>Author: {{author}}</p>
+    <p>Review: {{review_title}}</p>
   </li>
+  {{/if}}
   {{/each}}
 </ul>
-
-
-
-
+</section>
+{{/if}}

@@ -1,14 +1,19 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
-    const post_url = document.querySelector('input[name="post-url"]').value;
+    const title = document.querySelector('input[name="review-title"]').value;
+    const body = document.querySelector('input[name="review-text"]').value;
+    const public = document.querySelector('input[name="is-public"]').checked;
+    const comments = document.querySelector('input[name="comments-enabled"]').checked;
   
-    const response = await fetch(`/api/review`, {
+    const response = await fetch(`/api/reviews`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+        review_title,
+        review_text,
+        is_public,
+        comments_enabled,
+        book_id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -20,4 +25,4 @@ async function newFormHandler(event) {
 
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-review-form').addEventListener('submit', newFormHandler);
