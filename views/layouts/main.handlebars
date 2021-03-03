@@ -21,6 +21,12 @@
     <nav>
     <a href="/login">Login</a>
       <a href="/signup">Sign Up Here!</a>
+      <button id="logout" class="btn-no-style">logout</button>
+      {{#if loggedIn}}
+      <a href= "/dashboard">Dashboard</a>
+      
+      {{/if}}
+
     </nav>
     </header>
   </header>
@@ -32,6 +38,8 @@
     </footer>
   </div>
 
+
+<script src="/javascript/logout.js"></script>
 </body>
 
 </html>
