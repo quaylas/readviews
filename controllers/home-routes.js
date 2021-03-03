@@ -31,5 +31,14 @@ router.get('/dashboard', (req, res) => {
         return;
     }
     res.render('dashboard');
+});
+
+// get review page
+router.get('/create-review', (req, res) => {
+    if(!req.session.loggedIn){
+        res.redirect('/login');
+        return;
+    }
+    res.render('create-review');
 })
 module.exports = router;
