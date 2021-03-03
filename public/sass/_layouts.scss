@@ -1,12 +1,18 @@
-// should contain all styles for the layout/ header / footer // 
+// contains all styles for the title, header and footer // 
 
-h1 {
-    font-weight: 100;
+.title {
+    font-weight: bold;
     text-align: center;
+    color: $primaryColor1;
 
 }
 
-.main-header {
-    background-color: $primary_1 !global;
-  }
+.footer {
+    padding: 1.5rem;
+}
+
+.intro {
+    text-align: center;
+
+}
 

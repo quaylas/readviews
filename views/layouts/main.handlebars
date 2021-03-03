@@ -6,40 +6,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read Views</title>
-  <link rel="stylesheet" href="../../public/sass/output.css" type="text/scss">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="/sass/output.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 </head>
 
 <body>
   <div class="wrapper">
-    <header>
-          
-    <h1>
- Read Views
-    </h1>
-
-    
-    <nav>
-    <a href="/login">Login</a>
-      <a href="/signup">Sign Up Here!</a>
-      <button id="logout" class="btn-no-style">logout</button>
-      {{#if loggedIn}}
-      <a href= "/dashboard">Dashboard</a>
-      
-      {{/if}}
-
-    </nav>
-    </header>
-  </header>
+<section class="hero is-small">
+    <div class="hero-head">
+        <nav class="navbar" ><div class="container">
+            <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                    {{#if loggedIn}}
+                    <a class="navbar-item" href="/dashboard">dashboard</a>
+                    <a class="navbar-item" href="/">home</a>
+                    <a class="navbar-item" id="logout">logout</a>
+                    {{else}}
+                    <a class="navbar-item" href="/">home</a>
+                    <a class="navbar-item" href="/login">login</a>
+                    <a class="navbar-item" href="/signup">sign up</a>
+                    {{/if}}
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <h1 class="title" >
+          Read Views
+        </h1>
+    </div>
+</section>
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Thanks for visiting! Made by QS, MA, AND MP
-    </footer>
+   <footer class="footer">
+    <div class="content has-text-centered">
+    Thanks for visiting!</div>
+</footer>
   </div>
 
 
+{{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
