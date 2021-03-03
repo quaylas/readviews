@@ -110,7 +110,10 @@ router.post('/',  /*withAuth, */ (req, res)=> {
     Review.create({
         review_title: req.body.review_title,
         review_text: req.body.review_text,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
+        book_id: req.body.book_id, 
+        is_public: req.body.is_public,
+        comments_enabled: req.body.comments_enabled
     })
     .then(dbReviewData => res.json(dbReviewData))
     .catch(err => {

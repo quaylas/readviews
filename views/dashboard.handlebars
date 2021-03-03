@@ -1,22 +1,29 @@
-<ul>
-  {{#each review}}
-  <li>
-    <p>Reviews: {{reviews}}</p>
-    <p>Liked Books: {{books}}</p>
-  </li>
-  {{/each}}
-</ul>
+<section class='section'>
+  <h2 class='title'>Add a Review</h2>
+  <form class='new-review-form'>
+    <input class='input text' type='text' id='review-title' name='review-title' placeholder='Title' />
+    <input class='input text' type='text' id='review-text' name='review-text' placeholder='Go ahead. Make your day.' />
+    <input class='input checkbox' type='checkbox' id='is-public' name='is-public' value='is_public'><label for='is-public'>Make this review public</label>
+    <input class='input checkbox' type='checkbox' id='comments-enabled' name='comments-enabled' value='comments-enabled'><label for='comments-enabled'>Allow comments on this review</label>
+    <button  class='button' type='submit' >Publish</button>
+  </form>
+</section>
 
-<!--- change this --->
+{{#if reviews.length}}
+<section class='section'>
 <ul>
   {{#each book}}
   {{#if reviewed}}
   <li>
     <p>Title: {{title}}</p>
     <p>Author: {{author}}</p>
-    <p>Review: {{reviews}}</p>
+    <p>Review: {{review_title}}</p>
   </li>
   {{/if}}
   {{/each}}
 </ul>
+</section>
+{{/if}}
 
+
+<script src='/javascript/add-review.js'></script>
