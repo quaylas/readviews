@@ -13,14 +13,16 @@ async function loginFormHandler(event) {
           }),
           headers: { 'Content-Type': 'application/json' }
         });
-        const resObj = await response.json();
-        console.log(resObj);
+
         console.log(response);
         
         if (response.ok) {
           console.log('success');
+          document.location.replace('/dashboard/');
         } else {
-          alert(response.statusText);
+          // build sensible message to print, like 'no user found' or 'incorrect password'
+          const resObj = await response.json();
+          alert(resObj.message);
         }
       }
     // check the response status
