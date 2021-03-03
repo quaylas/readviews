@@ -1,11 +1,13 @@
-// should only contain imports and variables // 
+// should only contain imports and variables //
+
+
 
 
 
 $font-style:    Monospace;
 $container-width: 100;
 $margin: 1;
-$bgColor: lightblue;
+// $bgColor: lightblue;
 $font-size: 18px;
 
 $primaryColor1: #a2b9bc;
@@ -13,11 +15,12 @@ $primaryColor2: #b2ad7f;
 $primaryColor3: #878f99;
 
 
+.header {
+    color: orange;
+}
 
 
-@import 'layouts';
-@import 'components';
-@import 'base';
+
 
 
 
