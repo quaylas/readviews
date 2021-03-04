@@ -10,6 +10,7 @@
 
 .intro {
   text-align: center;
+  color: grey;
 }
 
 .user-form {
@@ -23,7 +24,22 @@
   background-color: #a2b9bc;
 }
 .user-form button :hover {
-  color: #a2b9bc;
+  color: white;
+  opacity: 0.6;
+}
+
+.login-form {
+  width: 35%;
+  border-radius: 0.25rem;
+  padding: 10px 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-form button {
+  background-color: #a2b9bc;
+}
+.login-form button :hover {
+  color: white;
   opacity: 0.6;
 }
 
@@ -41,6 +57,25 @@
 }
 .navbar.navbar :hover {
   color: #878f99;
+}
+
+a {
+  color: inherit;
+}
+
+.booksearch {
+  width: 35%;
+  border-radius: 0.25rem;
+  padding: 10px 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+.booksearch button {
+  background-color: #a2b9bc;
+}
+.booksearch button :hover {
+  color: #a2b9bc;
+  opacity: 0.6;
 }
 
 /*# sourceMappingURL=output.css.map */
