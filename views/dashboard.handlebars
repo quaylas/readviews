@@ -14,31 +14,24 @@
       </article>
     </div>
   </div>
-  {{#if reviews.length}}
   <div class='tile is-ancestor' id='review-list'>
     <div class='tile is-parent s-vertical'>
       <article class='tile is-child box'>
-        <h2 class="">Search for a Book</h2>
-        <p class='subtitle'>Create a review by selecting a book from your search</p>
+        <h2 class="">Reviews</h2>
+        <p class='subtitle'></p>
         <div class='content'>
           <ul>
-            {{#each book}}
-            {{#if reviewed}}
-            <li>
-              <p>Title: {{title}}</p>
-              <p>Author: {{author}}</p>
-              <p>Review: {{review_title}}</p>
+            {{#each reviews as |review|}}
+            <li class='py-2'>
+              {{> review-info review}}
             </li>
-            {{/if}}
             {{/each}}
           </ul>
         </div>
         </article>
       </div>
     </div>
-  {{/if}}
 </section>
-
 
 
 <script src="/javascript/get-book.js"></script>

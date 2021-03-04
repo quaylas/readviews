@@ -25,13 +25,13 @@ router.get('/signup', (req, res) => {
 });
 
 // get dashboard page
-router.get('/dashboard', (req, res) => {
-    if(!req.session.loggedIn) {
-        res.redirect('/login');
-        return;
-    }
-    res.render('dashboard');
-});
+// router.get('/dashboard', (req, res) => {
+//     if(!req.session.loggedIn) {
+//         res.redirect('/login');
+//         return;
+//     }
+//     res.render('dashboard');
+// });
 
 // get create-review page
 router.get('/create-review', (req, res)=> {

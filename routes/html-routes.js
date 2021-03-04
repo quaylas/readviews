@@ -12,13 +12,13 @@ app.get('/login', (req, res) => {
     res.render('./layouts/login');
 });
 app.get('/signup', (req, res) => {
-    
+    console.log('say hello');
     res.render('./layouts/signup');
 });
 
-app.get('/dashboard/', (req, res) => {
-    res.render('./layouts/dashboard');
-});
+// app.get('/dashboard/', (req, res) => {
+//     res.render('/dashboard');
+// });
 
 
 }

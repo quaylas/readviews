@@ -4,7 +4,7 @@ const { Review, User, Comment, Vote, Book} = require('../models');
 const withAuth = require('../utils/auth');
 
 //get all Reviews for the dashboard
-router.get('/dashboard/', withAuth, (req, res) => {
+router.get('/',withAuth, (req, res) => {
     console.log(req.session);
     console.log('======================');
     Review.findAll({
@@ -32,12 +32,16 @@ router.get('/dashboard/', withAuth, (req, res) => {
           {
             model: User,
             attributes: ['username']
+          }, 
+          {
+            model: Book,
+            attributes: ['title']
           }
         ]
     })
-      .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { Review, loggedIn: true });
+      .then(dbReviewData => {
+        const reviews = dbReviewData.map(review => review.get({ plain: true }));
+        res.render('dashboard', { reviews, loggedIn: true });
       })
       .catch(err => {
         console.log(err);
