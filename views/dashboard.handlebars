@@ -1,29 +1,37 @@
-<section id="createreview">
-<div class="title">Search for a book to review!</div>
-<div class="booksearch">
-{{!-- <input type="text" id="booksearch"></input> --}}
-<input class="input p-2 m-2" type="text" name="book-search" id="book-search" placeholder="search books"/>
-<button class="button p-2 m-2" type="submit">search</button>
-<div id="bookseachresults"></div>
-</div>
-
-</section>
-{{#if reviews.length}}
 <section class='section'>
-<ul>
-  {{#each book}}
-  {{#if reviewed}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Author: {{author}}</p>
-    <p>Review: {{review_title}}</p>
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
+  <div class='tile is-ancestor' id="createreview">
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="">Search for a Book</h2>
+        <p class='subtitle'>Create a review by selecting a book from your search</p>
+        <div class='content'>
+          <form class="book-search">
+            <input type="text" id="booksearch"></input>
+            <button id="gobooksearch" class='button'><span class="oi oi-magnifying-glass"></span></button>
+          <div id="bookseachresults"></div>
+          </form>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class='tile is-ancestor' id='review-list'>
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="">Reviews</h2>
+        <p class='subtitle'></p>
+        <div class='content'>
+          <ul>
+            {{#each reviews as |review|}}
+            <li class='py-2'>
+              {{> review-info-dash review}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        </article>
+      </div>
+    </div>
 </section>
-{{/if}}
-
 
 
 <script src="/javascript/get-book.js"></script>

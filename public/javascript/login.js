@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
       // check the response status
       if (response.ok) {
         console.log('success');
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
       } else {
         // build sensible message to print, like 'no user found' or 'incorrect password'
         const resObj = await response.json();
