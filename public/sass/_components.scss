@@ -1,5 +1,9 @@
 // contains all button, review form and user form styling // 
 
+
+
+
+
 .user-form {
       width: 35%;
       border-radius: .25rem;
@@ -9,11 +13,25 @@
       button {
       background-color: $primaryColor1;
       :hover {
-          color: $primaryColor1;
-          opacity: 0.6;
-      }
+        color: white;
+        opacity: 0.6;
+    }
     }
   }
+  .login-form {
+    width: 35%;
+    border-radius: .25rem;
+    padding: 10px 5px;
+    margin: 0 auto;
+    text-align: center;
+    button {
+    background-color: $primaryColor1;
+    :hover {
+        color: white;
+        opacity: 0.6;
+    }
+  }
+}
   
   .navbar {
       margin: 0 auto 20px;
@@ -29,4 +47,8 @@
           color: $primaryColor3;
         }
       }
+  }
+
+  a {
+    color: inherit;
   }
