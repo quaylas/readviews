@@ -1,11 +1,8 @@
 {{#if loggedIn}}
 <section class='section'>
   {{#each reviews as |review|}}
-    <li> 
       {{> review-info review}}
-  </li>
   {{/each}}
-</ol>
 </section>
 {{else}}
 <section class='section'>

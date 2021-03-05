@@ -38,10 +38,9 @@ if(usersearch){
             if(books.length > 0) {
                 for(i=0; i < Math.min(5, books.length); i++) {
                     let btitle = books[i].title;
-                    console.log(btitle);
                     let bauthor = books[i].author;
                     let breview_count = books[i].review_count;
-                    let create_review = `/create-review?book_id=${books[i].id}?book_title=${btitle}`;
+                    let create_review = `/create-review?id=${books[i].id}&title=${btitle}&author=${bauthor}`;
                     let bookListItem  = document.createElement('article');
                     bookListItem.className = 'book-list-item';
                     bookListItem.innerHTML= `<h2 class='book'>${btitle}</h2><p class='subtitle'>${bauthor}</p><p class='review-link'>Total Reviews: ${breview_count} | <a href='${create_review}'>Review this book</a></p>`;
