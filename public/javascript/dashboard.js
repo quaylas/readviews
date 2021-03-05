@@ -6,10 +6,10 @@ async function deleteFormHandler(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-    const response = await fetch(`/api/review/${id}`, {
+    const response = await fetch(`/api/reviews/${id}`, {
         method: 'DELETE'
     }).then(function(){
-        document.location.replace('/dashboard/');
+        //document.location.replace('/dashboard/');
     })
     .catch(err => console.log(err));
 
