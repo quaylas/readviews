@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
         })
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }));
-            res.render('homepage', { reviews, loggedIn: true });
+            res.render('homepage', { reviews, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);
