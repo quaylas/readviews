@@ -1,58 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Review, Comment, Book} = require('../models');
+const { User } = require('../models');
 
-
-router.get('/', (req, res) => {
-    console.log(req.session);
-    console.log('getting reviews');
-    console.log('======================');
-    Review.findAll({
-      where: {
-        is_public: true
-      },
-      attributes: [
-        'id',
-        'review_title',
-        'review_text',
-        'is_public',
-        'user_id',
-        'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE id = vote.review_id)'),'vote_count']
-      ],
-      include: [
-        {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'review_id', 'user_id', 'created_at'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
-    })
-      .then(dbReviewData => {
-        const reviews = dbReviewData.map(review => review.get({ plain: true }));
-        res.render('homepage', { reviews, loggedIn: true });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
-
-
-/* old code 
+// render homepage
 router.get('/', (req, res) => {
     console.log('Welcome Home');
     res.render('homepage',  {
         loggedIn: req.session.loggedIn
     });
-}); */
+});
 
 // get login page
 router.get('/login', (req, res) => {

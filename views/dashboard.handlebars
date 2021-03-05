@@ -2,31 +2,26 @@
   <div class='tile is-ancestor' id="createreview">
     <div class='tile is-parent s-vertical'>
       <article class='tile is-child box'>
-        <h2 class="">Search for a Book</h2>
+        <h2 class="title style='text-align:left;'">Search for a Book</h2>
         <p class='subtitle'>Create a review by selecting a book from your search</p>
         <div class='content'>
-          <form class="book-search">
-            <input type="text" id="booksearch"></input>
-            <button id="gobooksearch" class='button'><span class="oi oi-magnifying-glass"></span></button>
-          <div id="bookseachresults"></div>
+          <form class="book-search control login-form m-2" style='width:100%'>
+            <input class='input p-2' type="text" id="booksearch" style='width: 85%; text-align:left;'></input>
+            <button id="gobooksearch" class='button ml-2'><span class="oi oi-magnifying-glass"></span></button>
+          <div id="booksearchresults"></div>
           </form>
         </div>
       </article>
     </div>
-  </div>
   <div class='tile is-ancestor' id='review-list'>
     <div class='tile is-parent s-vertical'>
       <article class='tile is-child box'>
-        <h2 class="">Reviews</h2>
+        <h2 class="title" style='text-align:left;'>Reviews</h2>
         <p class='subtitle'></p>
         <div class='content'>
-          <ul>
             {{#each reviews as |review|}}
-            <li class='py-2'>
               {{> review-info-dash review}}
-            </li>
             {{/each}}
-          </ul>
         </div>
         </article>
       </div>
@@ -34,4 +29,4 @@
 </section>
 
 
-<script src="/javascript/get-book.js"></script>
+<script src="/javascript/dashboard.js"></script>
