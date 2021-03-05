@@ -24,17 +24,6 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-// get dashboard page
-// router.get('/dashboard', (req, res) => {
-//     if(!req.session.loggedIn) {
-//         console.log('redirect');
-//         res.redirect('/login');
-//         return;
-//     }
-//     console.log('wrong dashboard!');
-//     res.render('dashboard');
-// });
-
 // get create-review page
 router.get('/create-review', (req, res)=> {
     if(!req.session.loggedIn) {
