@@ -1,0 +1,93 @@
+.title {
+  background-image: url("../assets/images/readviews final logo.png");
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  /* outdated graphic 
+    font-weight: bold;
+    text-align: center;
+    color: $primaryColor1; */
+}
+
+.footer {
+  padding: 1.5rem;
+}
+
+.intro {
+  text-align: center;
+  color: grey;
+}
+
+.user-form {
+  width: 35%;
+  border-radius: .25rem;
+  padding: 10px 5px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.user-form button {
+  background-color: #a2b9bc;
+}
+
+.user-form button :hover {
+  color: white;
+  opacity: 0.6;
+}
+
+.login-form {
+  width: 35%;
+  border-radius: .25rem;
+  padding: 10px 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-form button {
+  background-color: #a2b9bc;
+}
+
+.login-form button :hover {
+  color: white;
+  opacity: 0.6;
+}
+
+.navbar {
+  margin: 0 auto 20px;
+  border: none;
+  background: none;
+  color: #878f99;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.navbar.navbar {
+  margin: 0 10px 10px;
+  background: #a2b9bc;
+}
+
+.navbar.navbar :hover {
+  color: #878f99;
+}
+
+a {
+  color: inherit;
+}
+
+.booksearch {
+  width: 35%;
+  border-radius: .25rem;
+  padding: 10px 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booksearch button {
+  background-color: #a2b9bc;
+}
+
+.booksearch button :hover {
+  color: #a2b9bc;
+  opacity: 0.6;
+}
+/*# sourceMappingURL=main.css.map */
