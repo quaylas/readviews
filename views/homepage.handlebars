@@ -1,20 +1,10 @@
 {{#if loggedIn}}
 <section class='section'>
-<ol class="book-list">
-  <li>
-    <article class="book">
-      <div class="review">This should be updated to load a list of all books, have a search bar, etc.
-        {{!-- <a href="{{review_url}}" target="_blank">{{title}}</a>
-        <span>({{review_url}})</span> --}}
-      </div>
-      {{!-- <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div> --}}
-    </article>
+  {{#each reviews as |review|}}
+    <li> 
+      {{> review-info review}}
   </li>
+  {{/each}}
 </ol>
 </section>
 {{else}}

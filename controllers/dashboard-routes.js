@@ -4,9 +4,8 @@ const { Review, User, Comment, Vote, Book} = require('../models');
 const withAuth = require('../utils/auth');
 
 //get all Reviews for the dashboard
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     console.log(req.session);
-    console.log('getting reviews');
     console.log('======================');
     Review.findAll({
       where: {
