@@ -7,17 +7,17 @@ async function commentFormHandler(event) {
     ];
   
     if (comment_text) {
-      const response = await fetch('/api/comments', {
+      const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
-          post_id,
+          review_id,
           comment_text
         }),
         headers: {
           'Content-Type': 'application/json'
         }
       }).then(function(){
-        document.location.reload();
+        //document.location.reload();
       })
       .catch(err => console.log(err));
 
