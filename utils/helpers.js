@@ -13,6 +13,7 @@ module.exports = {
         .split('?')[0];
     },
     format_plural: (word, amount) => {
+        amount = parseInt(amount);
         if (amount !== 1) {
         return `${word}s`;
         }

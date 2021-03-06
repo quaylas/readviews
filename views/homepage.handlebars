@@ -1,8 +1,18 @@
 {{#if loggedIn}}
-<section class='section'>
-  {{#each reviews as |review|}}
-      {{> review-info review}}
-  {{/each}}
+<section class='section review-section'>
+  <div class='tile is-ancestor' id='review-list'>
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="title">Reviews</h2>
+        <p class='subtitle'></p>
+        <div class='content'>
+            {{#each reviews as |review|}}
+              {{> review-info review}}
+            {{/each}}
+        </div>
+        </article>
+      </div>
+    </div>
 </section>
 {{else}}
 <section class='section'>

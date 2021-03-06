@@ -1,11 +1,11 @@
 
 <article class='review m-2'>
-    <h3 class='title'>
+    <h3 class='title review-title'>
         {{review_title}}
     </h3>
+    <h4>A review from {{user.username}} of {{book.author}}'s <i>{{book.title}}</i></h4>
     <div class='review-details'>
-        by {{user.username}} on {{format_date created_at}} | 
-        <a href="/single-review/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        {{format_date created_at}} | {{vote_count}} {{format_plural "upvote" vote_count}} | <a href="/single-review/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
 </article>
 

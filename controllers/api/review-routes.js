@@ -126,10 +126,10 @@ router.post('/',  withAuth, (req, res)=> {
 router.put('/upvote', (req, res)  => {
     // expects {user_id:, review_id}
     //console.log(req.body.review_id);
-     Review.upvote({...req.body, user_id: req.session.user_id }, {Vote, Comment, User })
+    Review.upvote({...req.body, user_id: req.session.user_id }, {Vote, Comment, User })
     .then(updatedVoteData => 
     
-       { console.log(updatedVoteData),
+        { console.log(updatedVoteData),
         res.json(updatedVoteData)})
     .catch(err => {
         console.log(err);
@@ -144,7 +144,9 @@ router.put('/:id', withAuth, (req, res) => {
         Review.update(
             {
                 review_title: req.body.title,
-                review_text: req.body.text
+                review_text: req.body.text,
+                is_public: req.body.is_public,
+                comments_enabled: req.body.comments_enabled
             },
             {
                 where: {

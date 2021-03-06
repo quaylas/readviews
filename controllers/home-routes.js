@@ -16,10 +16,15 @@ router.get('/', (req, res) => {
             'review_text',
             'is_public',
             'user_id',
+            'book_id',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE id = vote.review_id)'),'vote_count']
         ],
         include: [
+            {
+                model: Book,
+                attributes: ['title','author']
+            },
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'review_id', 'user_id', 'created_at'],
