@@ -10,7 +10,7 @@
       padding: 10px 5px;
       margin: 0 auto;
       text-align: right;
-      button {
+      .button {
       background-color: $primaryColor1;
       :hover {
         color: white;
@@ -24,7 +24,7 @@
     padding: 10px 5px;
     margin: 0 auto;
     text-align: center;
-    button {
+    .button {
     background-color: $primaryColor1;
     :hover {
         color: white;
@@ -70,6 +70,7 @@
   }
 
   .review {
+    background-color: $primaryColor1Light;
     .title {
       text-align: left;
     }
