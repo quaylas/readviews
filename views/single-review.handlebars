@@ -1,7 +1,35 @@
-<div class="singlecommentedit">
-         <!--by {{user.username}} on {{format_date created_at}}-->
+
+<article class='review m-2'>
+    <h3 class='title'>{{review.review_title}}</h3>
+    <h2><strong>{{review.book.title}}</strong> by {{review.book.author}}</h2>
+    <div class='review-details'>
+        by {{review.user.username}} on {{format_date review.created_at}}
+    </div>
+    <div class="reviewtext"><strong>Review</strong>
+    <br>
+    {{review.review_text}}</div>
+</article>
 
 {{#if loggedIn}}
+<!--comments section-->
+<div>
+
+<section class="comment">
+{{#each review.comments as |comment|}}
+  {{>comments comment}}
+
+{{/each}}
+   <!-- <div>
+      {{review.comment.user.username}} on {{format_date review.comment.created_at}}
+    </div>
+
+    <div class="text">
+      {{comment.comment_text}}
+    </div>
+  </section>
+
+</div> -->
+
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -12,6 +40,8 @@
     <button type="button" class=" btn btn-primary upvote-btn">upvote</button>
   </div>
 </form>
+
+
 {{/if}}
 
 

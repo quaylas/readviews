@@ -16,7 +16,6 @@ router.get('/:id', (req, res) => {
             'is_public',
             'user_id',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE id = vote.review_id)'),'vote_count']
         ],
         include: [
             {
@@ -30,26 +29,28 @@ router.get('/:id', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
-            }
+            },
+        {
+            model: Book,
+            attributes: ["title", "author"]
+        }
         ]
     })
     .then(dbReviewData => {
-        if(!dbReviewData) {
-            res.status(404).json({ message: 'No review found with this id!'});
-            return;
+        if (dbReviewData) {
+        const review = dbReviewData.get({ plain: true });
+       console.log(review);
+        res.render('single-review', {
+            review,
+            loggedIn: true
+        });
+        } else {
+        res.status(404).json({message: 'No review found with that ID!'}).end();
         }
-       
-    
-    }).then(showit => {
-
-        const info = req.body.review
-        console.log(info)
-     res.render('single-review', {info,  loggedIn: req.session.loggedIn})
-})
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
     })
+    .catch(err => {
+        res.status(500).json(err);
+    });
 });
 
 module.exports = router;
