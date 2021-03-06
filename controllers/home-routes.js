@@ -31,11 +31,16 @@ router.get('/', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Book,
+                attributes: ["title", "author"]
             }
             ]
         })
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }));
+            console.log(reviews)
             res.render('homepage', { reviews, loggedIn: req.session.loggedIn });
         })
         .catch(err => {

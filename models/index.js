@@ -38,16 +38,16 @@ Vote.belongsTo(User, {
 });
 
 Vote.belongsTo(Review, {
-    foreignKey: 'Review_id',
+    foreignKey: 'review_id',
     onDelete: 'SET NULL'
 });
 
 User.hasMany(Vote, {
-    foreignKey: 'User_id'
+    foreignKey: 'user_id'
 });
 
 Review.hasMany(Vote, {
-    foreignKey: 'Review_id'
+    foreignKey: 'review_id'
 }); 
 
 
@@ -65,7 +65,6 @@ User.hasMany(Comment, {
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
-
 
 
 
