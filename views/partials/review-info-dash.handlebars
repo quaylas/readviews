@@ -2,7 +2,7 @@
     <h3 class='review-title'>
         {{review_title}}
     </h3>
-    <h2> {{book_id}}</h2>
+    <h4>A review of {{book.author}}'s <i>{{book.title}}</i></h4>
     <div class='review-details'>
         Created: {{format_date created_at}} | <a href='/edit-review/{{id}}'>Edit</a> | <span class='delete-btn' id='r{{id}}'>Delete</span>
     </div>

@@ -1,4 +1,15 @@
 
+function getBookData() {
+    const query = document.location.search.substring(1);
+    const queryVars = query.split('&');
+
+    const book = {
+        id: queryVars[0].split('=')[1],
+        title: queryVars[1].split('=')[1]
+    };
+
+    return book;
+};
 
 async function newFormHandler(event) {
     event.preventDefault();
@@ -7,6 +18,8 @@ async function newFormHandler(event) {
     const review_text = document.querySelector('textarea[name="review-text"]').value;
     const is_public = document.querySelector('input[name="is-public"]').checked;
     const comments_enabled = document.querySelector('input[name="comments-enabled"]').checked;
+    const book = getBookData();
+    const book_id = book.id;
     
 
     const response = await fetch(`/api/reviews`, {
@@ -15,7 +28,8 @@ async function newFormHandler(event) {
         review_title,
         review_text,
         is_public,
-        comments_enabled
+        comments_enabled,
+        book_id
         }),
         headers: {
         'Content-Type': 'application/json'
@@ -27,4 +41,5 @@ async function newFormHandler(event) {
 
 };
 
+getBookData();
 document.querySelector('.new-review-form').addEventListener('submit', newFormHandler);

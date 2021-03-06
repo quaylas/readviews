@@ -10,6 +10,7 @@ router.get('/:id', withAuth, (req, res) => {
         'id',
         'review_title',
         'review_text',
+        'book_id',
         'is_public',
         'comments_enabled',
         'created_at'
