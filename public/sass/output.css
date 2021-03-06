@@ -8,6 +8,7 @@
 
 .footer {
   padding: 1.5rem;
+  font-size: 18px;
 }
 
 .intro {
@@ -52,7 +53,7 @@
 }
 
 .navbar {
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   border: none;
   background: none;
   color: #878f99;
@@ -60,7 +61,7 @@
   cursor: pointer;
 }
 .navbar.navbar {
-  margin: 0 10px 10px;
+  margin: 0 auto 30px;
   background: #a2b9bc;
 }
 .navbar.navbar :hover {
@@ -69,6 +70,28 @@
 
 a {
   color: inherit;
+}
+
+.review-options {
+  text-align: left;
+}
+
+.review-section .title {
+  text-align: left;
+}
+.review-section .book-search {
+  width: 100%;
+}
+.review-section .book-search .input {
+  width: 85%;
+}
+
+.review .title {
+  text-align: left;
+}
+
+.section {
+  font-size: 18px;
 }
 
 .booksearch {
