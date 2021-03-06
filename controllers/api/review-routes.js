@@ -105,7 +105,7 @@ router.get('/user/:query', (req, res) => {
 });
 
 // create review
-router.post('/',  /*withAuth, */ (req, res)=> {
+router.post('/',  withAuth, (req, res)=> {
     // expects {review_title: "this is the title", review_text: "this is the review", user_id: 1, book_id: 1}
     Review.create({
         review_title: req.body.review_title,

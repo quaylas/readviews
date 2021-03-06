@@ -5,6 +5,7 @@ const homeRoutes = require('./home-routes.js');
 const dashboardRoutes = require('./dashboard-routes.js');
 const createReviewRoutes = require('./create-review-routes');
 const singleReviewRoutes = require('./single-review-routes');
+const editReviewRoutes = require('./edit-review-routes');
 
 
 
@@ -14,5 +15,6 @@ router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/create-review', createReviewRoutes);
 router.use("/single-review", singleReviewRoutes);
+router.use('/edit-review',  editReviewRoutes);
 
 module.exports = router;
