@@ -1,12 +1,8 @@
-.title {
-  background-image: url("../assets/images/readviews final logo.png");
+.hero-body {
+  background-image: url("/assets/images/logo.png");
   background-size: cover;
   width: 300px;
   height: 300px;
-  /* outdated graphic 
-    font-weight: bold;
-    text-align: center;
-    color: $primaryColor1; */
 }
 
 .footer {
@@ -16,6 +12,12 @@
 .intro {
   text-align: center;
   color: grey;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  color: #a2b9bc;
 }
 
 .user-form {

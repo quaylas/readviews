@@ -1,19 +1,17 @@
 // contains all styles for the title, header and footer // 
 
-.title {
-    background-image: url("../assets/images/readviews\ final\ logo.png");
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    
-    /* outdated graphic 
-    font-weight: bold;
-    text-align: center;
-    color: $primaryColor1; */
+.hero-body {
+    background-image: url("/assets/images/logo.png");
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    width: 415px;
+    height: 215px;
+    }
 
-}
 .footer {
     padding: 1.5rem;
+    font-size: $font-size;
+
 }
 // not signed in page // 
 .intro {
@@ -22,4 +20,12 @@
 
 }
 
+.title {
+    font-weight: bold;
+    text-align: center;
+    color: $primaryColor1;
+}
 
+.section {
+    padding: 1.5rem !important;
+}

@@ -10,7 +10,7 @@
       padding: 10px 5px;
       margin: 0 auto;
       text-align: right;
-      button {
+      .button {
       background-color: $primaryColor1;
       :hover {
         color: white;
@@ -24,7 +24,7 @@
     padding: 10px 5px;
     margin: 0 auto;
     text-align: center;
-    button {
+    .button {
     background-color: $primaryColor1;
     :hover {
         color: white;
@@ -34,14 +34,14 @@
 }
   
   .navbar {
-      margin: 0 auto 20px;
+      margin: 0 auto 30px;
       border: none;
       background: none;
       color: $primaryColor3;
       font-size: 18px;
       cursor: pointer;
       &.navbar {
-        margin: 0 10px 10px;
+        margin: 0 auto 30px;
         background: $primaryColor1;
         :hover {
           color: $primaryColor3;
@@ -51,4 +51,31 @@
 
   a {
     color: inherit;
+  }
+
+  .review-options {
+    text-align: left;
+  }
+
+  .review-section {
+    .title {
+      text-align: left;
+    }
+    .book-search {
+      width: 100%;
+      .input {
+        width: 85%;
+      }
+    }
+  }
+
+  .review {
+    background-color: $primaryColor1Light;
+    .title {
+      text-align: left;
+    }
+  }
+
+  .section {
+    font-size: $font-size;
   }

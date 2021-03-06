@@ -1,16 +1,29 @@
+.hero-body {
+  background-image: url("/assets/images/logo.png");
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  width: 415px;
+  height: 215px;
+}
+
+.footer {
+  padding: 1.5rem;
+  font-size: 18px;
+}
+
+.intro {
+  text-align: center;
+  color: grey;
+}
+
 .title {
   font-weight: bold;
   text-align: center;
   color: #a2b9bc;
 }
 
-.footer {
-  padding: 1.5rem;
-}
-
-.intro {
-  text-align: center;
-  color: grey;
+.section {
+  padding: 1.5rem !important;
 }
 
 .user-form {
@@ -20,10 +33,10 @@
   margin: 0 auto;
   text-align: right;
 }
-.user-form button {
+.user-form .button {
   background-color: #a2b9bc;
 }
-.user-form button :hover {
+.user-form .button :hover {
   color: white;
   opacity: 0.6;
 }
@@ -35,16 +48,16 @@
   margin: 0 auto;
   text-align: center;
 }
-.login-form button {
+.login-form .button {
   background-color: #a2b9bc;
 }
-.login-form button :hover {
+.login-form .button :hover {
   color: white;
   opacity: 0.6;
 }
 
 .navbar {
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   border: none;
   background: none;
   color: #878f99;
@@ -52,7 +65,7 @@
   cursor: pointer;
 }
 .navbar.navbar {
-  margin: 0 10px 10px;
+  margin: 0 auto 30px;
   background: #a2b9bc;
 }
 .navbar.navbar :hover {
@@ -61,6 +74,31 @@
 
 a {
   color: inherit;
+}
+
+.review-options {
+  text-align: left;
+}
+
+.review-section .title {
+  text-align: left;
+}
+.review-section .book-search {
+  width: 100%;
+}
+.review-section .book-search .input {
+  width: 85%;
+}
+
+.review {
+  background-color: rgba(162, 185, 188, 0.4);
+}
+.review .title {
+  text-align: left;
+}
+
+.section {
+  font-size: 18px;
 }
 
 .booksearch {
