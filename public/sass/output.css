@@ -1,7 +1,9 @@
-.title {
-  font-weight: bold;
-  text-align: center;
-  color: #a2b9bc;
+.hero-body {
+  background-image: url("/assets/images/logo.png");
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  width: 415px;
+  height: 215px;
 }
 
 .footer {
@@ -11,6 +13,12 @@
 .intro {
   text-align: center;
   color: grey;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  color: #a2b9bc;
 }
 
 .user-form {
