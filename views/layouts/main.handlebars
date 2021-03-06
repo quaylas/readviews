@@ -14,43 +14,40 @@
 
 <body>
   <div class="wrapper">
-<section class="hero is-small">
-    <div class="hero-head">
-        <nav class="navbar" ><div class="container">
-            <div id="navbarMenuHeroA" class="navbar-menu">
-                <div class="navbar-end">
-                    {{#if loggedIn}}
-                    <a class="navbar-item" href="/dashboard">dashboard</a>
-                    <a class="navbar-item" href="/">home</a>
-                    <a class="navbar-item" id="logout">logout</a>
-                    {{else}}
-                    <a class="navbar-item" href="/">home</a>
-                    <a class="navbar-item" href="/login">login</a>
-                    <a class="navbar-item" href="/signup">sign up</a>
-                    {{/if}}
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="hero-body">
-        <h1 class="title" >
-          Read Views
-        </h1>
-    </div>
-</section>
-    <main>
-      {{{ body }}}
-    </main>
-   <footer class="footer">
+  <section class="hero is-small">
+      <div class="hero-head">
+          <nav class="navbar" ><div class="container">
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                  <div class="navbar-end">
+                      {{#if loggedIn}}
+                      <a class="navbar-item" href="/dashboard">dashboard</a>
+                      <a class="navbar-item" href="/">home</a>
+                      <a class="navbar-item" id="logout">logout</a>
+                      {{else}}
+                      <a class="navbar-item" href="/">home</a>
+                      <a class="navbar-item" href="/login">login</a>
+                      <a class="navbar-item" href="/signup">sign up</a>
+                      {{/if}}
+                  </div>
+              </div>
+          </nav>
+      </div>
+      <div class="hero-body">
+          <h1 class="title" > <img src='/assets/images/readviewsLogo.png' alt='ReadViews (logo)'/></h1>
+      </div>
+  </section>
+  <main>
+    {{{ body }}}
+  </main>
+  <footer class="footer">
     <div class="content has-text-centered">
     Thanks for visiting!</div>
-</footer>
-  </div>
+  </footer>
+    </div>
 
-
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
