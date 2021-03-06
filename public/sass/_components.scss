@@ -71,8 +71,14 @@
 
   .review {
     background-color: $primaryColor1Light;
+    border-radius: 15px 50px;
+    padding: 15px;
     .title {
       text-align: left;
+    }
+    .review-details {
+      padding-top: 3px;
+      text-align: right;
     }
   }
 

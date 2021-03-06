@@ -9,6 +9,7 @@
 .footer {
   padding: 1.5rem;
   font-size: 18px;
+  color: grey;
 }
 
 .intro {
@@ -23,7 +24,7 @@
 }
 
 .section {
-  padding: 1.5rem !important;
+  padding: 1.5rem;
 }
 
 .user-form {
@@ -92,9 +93,15 @@ a {
 
 .review {
   background-color: rgba(162, 185, 188, 0.4);
+  border-radius: 15px 50px;
+  padding: 15px;
 }
 .review .title {
   text-align: left;
+}
+.review .review-details {
+  padding-top: 3px;
+  text-align: right;
 }
 
 .section {
