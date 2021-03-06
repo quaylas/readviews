@@ -125,12 +125,16 @@ router.post('/',  /*withAuth, */ (req, res)=> {
 // upvote review
 router.put('/upvote', (req, res)  => {
     // expects {user_id:, review_id}
-    Review.upvote(req.body,  { Vote, Review, User })
-    .then(updatedVoteData => res.json(updatedVoteData))
+    //console.log(req.body.review_id);
+     Review.upvote({...req.body, user_id: req.session.user_id }, {Vote, Comment, User })
+    .then(updatedVoteData => 
+    
+       { console.log(updatedVoteData),
+        res.json(updatedVoteData)})
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
+    }); 
 });
 
 // update review

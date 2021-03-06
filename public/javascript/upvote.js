@@ -4,18 +4,20 @@ async function upvoteClickHandler(event) {
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    const response = await fetch('/api/review/upvote', {
+    const response = await fetch('/api/reviews/upvote', {
       method: 'PUT',
       body: JSON.stringify({
         review_id: id
+        
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(function() {
-      document.location.reload();
+      //document.location.reload();
+      document.querySelector('.upvote-btn').style.visibility = "hidden"
     })
-    .catch(err => console.log(err));
+    
 
 }
 

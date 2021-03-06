@@ -17,7 +17,7 @@ async function commentFormHandler(event) {
           'Content-Type': 'application/json'
         }
       }).then(function(){
-        //document.location.reload();
+        document.location.reload();
       })
       .catch(err => console.log(err));
 
