@@ -86,3 +86,11 @@
     font-size: $font-size;
   }
 
+ .book-list-item {
+    background-color: $primaryColor3Light;
+    border-radius: 15px 50px;
+    padding: 15px;
+    .title {
+      text-align: left;
+    }
+  }

@@ -40,7 +40,7 @@ if(usersearch){
                     let breview_count = books[i].review_count;
                     let create_review = `/create-review?id=${books[i].id}&title=${btitle}&author=${bauthor}`;
                     let bookListItem  = document.createElement('article');
-                    bookListItem.className = 'book-list-item';
+                    bookListItem.classList.add('book-list-item', "m-3");
                     bookListItem.innerHTML= `<h2 class='book'>${btitle}</h2><p class='subtitle'>${bauthor}</p><p class='review-link'>Total Reviews: ${breview_count} | <a href='${create_review}'>Review this book</a></p>`;
                     bookInnerContainer.appendChild(bookListItem);
                 }
@@ -56,4 +56,5 @@ if(usersearch){
 
 }
 document.getElementById("gobooksearch").addEventListener("click", booksearch);
-document.querySelector('.delete-btn').addEventListener('click', deleteFormHandler);
+let deleteBtnEl=document.querySelector('.delete-btn');
+if (deleteBtnEl){deleteBtnEl.addEventListener('click', deleteFormHandler)};
