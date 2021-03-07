@@ -27,6 +27,11 @@
   padding: 1.5rem;
 }
 
+.subtitle {
+  font-size: 18px;
+  color: grey;
+}
+
 .user-form {
   width: 35%;
   border-radius: 0.25rem;
