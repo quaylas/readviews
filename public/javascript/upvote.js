@@ -14,8 +14,11 @@ async function upvoteClickHandler(event) {
         'Content-Type': 'application/json'
       }
     }).then(function() {
-      //document.location.reload();
-      document.querySelector('.upvote-btn').style.visibility = "hidden"
+      document.location.reload();
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     })
     
 

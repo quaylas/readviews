@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
             'user_id',
             'book_id',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE id = vote.review_id)'),'vote_count']
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE review.id = vote.review_id)'),'vote_count']
         ],
         include: [
             {
@@ -38,14 +38,13 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Book,
-                attributes: ["title", "author"]
+                model: Vote,
+                attributes: ["id", "review_id","user_id"]
             }
             ]
         })
         .then(dbReviewData => {
             const reviews = dbReviewData.map(review => review.get({ plain: true }));
-            console.log(reviews)
             res.render('homepage', { reviews, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
