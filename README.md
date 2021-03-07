@@ -11,9 +11,9 @@ Readviews is a website designed for readers. It allows users to post reviews abo
 * [Credits](#credits)
 * [License](#license)
          
-## installation 
+## Installation 
 
-You do not need to install this project. You should be able to demo it at our live link posted in the testing section. If you do want to download the files form Github, and run it locally, you will need to: download the project, create a Mysql database, update the env file to mirror your credentials for Mysql, you will then need to download the dependancies for our application. these are node.js, NPM, bcrypt, connect-session-sequelize, dotnev, express, express-handlebars, express-session, jest (for testing), mysql2, node-sass, sass, sequelize. After you have installed the required files you will need to navigate to your root directory and open terminal and type "npm start" or" node server.js"
+You do not need to install this project. You should be able to demo it at our live link posted in the testing section. If you do want to download the files from Github, and run it locally, you will need to: download the project, create a Mysql database, update the env file to mirror your credentials for Mysql, you will then need to download the dependencies for our application. these are node.js, NPM, bcrypt, connect-session-sequelize, dotnev, express, express-handlebars, express-session, jest (for testing), mysql2, node-sass, sass, sequelize. After you have installed the required files you will need to navigate to your root directory and open terminal and type "npm start" or" node server.js" Database Seeds are provided you can seed your database by opening the console at your root directory, and typing "npm run seeds"
 
 ## Usage
 
