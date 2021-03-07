@@ -47,7 +47,7 @@ if(usersearch){
 
                 bookContainer.appendChild(bookInnerContainer);
             }
-            else {console.log('wrong')}
+            else {bookInnerContainer.innerHTML=`<h2 class='title'>No books found with that title!</h2>s`}
         })
 
     })

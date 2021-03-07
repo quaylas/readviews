@@ -37,7 +37,6 @@ router.get('/:id', withAuth, (req, res) => {
     .then(dbReviewData => {
         if (dbReviewData) {
         const review = dbReviewData.get({ plain: true });
-        console.log(review);
         res.render('edit-review', {
             review,
             loggedIn: true
