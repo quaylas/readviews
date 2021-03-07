@@ -5,6 +5,12 @@
 
 Readviews is a website designed for readers. It allows users to post reviews about books they have read. The purpose of the application is to allow people to look up reviews about books before buying them. Users can upvote and comment on reviews to create a community based outlet for readers who want to do a little research on books before buying them.
 
+## Screen Shots
+
+![Screen Shot 1 login](https://github.com/quaylas/readviews/blob/main/public/assets/images/screenshot2.JPG)
+
+![Screen Shot2 account](https://github.com/quaylas/readviews/blob/main/public/assets/images/screenshot1.JPG)
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
