@@ -1,0 +1,32 @@
+<section class='section review-section'>
+  <div class='tile is-ancestor' id="createreview">
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="title">Search for a Book</h2>
+        <p class='subtitle'>Create a review by selecting a book from your search</p>
+        <div class='content'>
+          <form class="book-search control login-form m-2">
+            <input class='input p-2' type="text" id="booksearch"></input>
+            <button id="gobooksearch" class='button ml-2'><span class="oi oi-magnifying-glass"></span></button>
+            </form>
+          <div id="booksearchresults"></div>
+          </div>
+      </article>
+    </div>
+  <div class='tile is-ancestor' id='review-list'>
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="title">Reviews</h2>
+        <p class='subtitle'></p>
+        <div class='content'>
+            {{#each reviews as |review|}}
+              {{> review-info-dash review}}
+            {{/each}}
+        </div>
+        </article>
+      </div>
+    </div>
+</section>
+
+
+<script src="/javascript/dashboard.js"></script>

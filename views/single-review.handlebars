@@ -1,0 +1,45 @@
+
+<section class='section review-section'>
+  <div class='tile is-ancestor'>
+    <div class='tile is-parent is-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="title">{{review.review_title}}</h2>
+        <div class='subtitle'>A review of {{review.book.author}}'s <i>{{review.book.title}}</i>
+        </div>
+        <div class='content'>
+          {{review.review_text}}
+        </div>
+      </article>
+      <article class='tile is-child box'>
+        <h2 class="title">Join the discussion</h2>
+        <div class='content'>
+          <form class="comment-form user-form book-search control">
+            <div>
+              <textarea class='input textarea p-2' name="comment-body" placeholder="Your voice is here to be heard! Leave a Comment!"></textarea>
+              <button type="submit" class="button m-2">save comment</button>
+              {{#if upvoted}} <button type="button" class="button m-2 has-background-white">you upvoted this!</button> {{else}} <button type="button" class="button m-2 upvote-btn">upvote review</button>{{/if}}
+            </div>
+          </form>
+        </div>
+        </article>
+    </div>
+  {{#if loggedIn}}
+  <div class='tile is-ancestor' id='review-list'>
+    <div class='tile is-parent s-vertical'>
+      <article class='tile is-child box'>
+        <h2 class="title">Comments</h2>
+        <p class='subtitle'></p>
+        <div class='content'>
+            {{#each review.comments as |comment|}}
+              {{>comments comment}}
+            {{/each}}
+        </div>
+        </article>
+      </div>
+    </div>
+    {{/if}}
+</section>
+
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+

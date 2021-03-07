@@ -1,0 +1,18 @@
+<section class='section'>
+    <h3 class='title'>Editing your Review for</h3>
+    <h4 class='title'>{{review.book.title}}</h4>
+    <form class='edit-review-form user-form'>
+        <input class='input text p-2 my-2' type='text' id='review-title' name='review-title'  value='{{review.review_title}}' />
+        <textarea class='input textarea p-2 my-2' type='textarea' rows='10' id='review-text' name='review-text' placeholder='Go ahead. Make your day.'>{{review.review_text}}</textarea>
+        <p class='review-options' style='text-align:left'>
+            <input class='checkbox p-2 m-2' type='checkbox' id='is-public' name='is-public' value='is_public' {{#if review.is_public}}checked{{/if}}><label for='is-public'>Make Public</label>
+            <input class='checkbox p-2 m-2' type='checkbox' id='comments-enabled' name='comments-enabled' value='comments-enabled' {{#if review.comments_enabled}}checked{{/if}}><label for='comments-enabled'>Allow Comments</label>
+        </p>
+        <p>
+            <button  class='button p-2' type='submit'>save</button>
+        </p>
+    </form>
+</section>
+
+
+<script src='/javascript/edit-review.js'></script>

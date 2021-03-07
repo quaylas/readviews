@@ -1,0 +1,16 @@
+// contains all dashboard styling//
+
+.booksearch {
+    width: 35%;
+    border-radius: .25rem;
+    padding: 10px 5px;
+    margin: 0 auto;
+    text-align: center;
+    button {
+    background-color: $primaryColor1;
+    :hover {
+        color: $primaryColor1;
+        opacity: 0.6;
+    }
+  }
+}

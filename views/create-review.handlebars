@@ -1,0 +1,18 @@
+<section class='section'>
+    <h3 class='title'>Reviewing</h3>
+    <h4 class='title'>{{book.title}} | {{book.author}}</h4>
+    <form class='new-review-form user-form'>
+        <input class='input text p-2 my-2' type='text' id='review-title' name='review-title' placeholder='Title' />
+        <textarea class='input textarea p-2 my-2' type='textarea' rows='10' id='review-text' name='review-text' placeholder='Go ahead. Make your day.'></textarea>
+        <p class='review-options'>
+            <input class='checkbox p-2 m-2' type='checkbox' id='is-public' name='is-public' value='is_public'><label for='is-public'>Make Public</label>
+            <input class='checkbox p-2 m-2' type='checkbox' id='comments-enabled' name='comments-enabled' value='comments-enabled'><label for='comments-enabled'>Allow Comments</label>
+        </p>
+        <p>
+            <button  class='button p-2' type='submit'>publish</button>
+        </p>
+    </form>
+</section>
+
+
+<script src='/javascript/add-review.js'></script>

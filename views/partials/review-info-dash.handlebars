@@ -1,0 +1,9 @@
+<article class='review m-3'>
+    <h3 class='title review-title'>
+        {{review_title}}
+    </h3>
+    <h4>A review of {{book.author}}'s <i>{{book.title}}</i></h4>
+    <div class='review-details'>
+        {{format_date created_at}} | <a href='/edit-review/{{id}}'>Edit</a> | <span class='delete-btn' data-id='{{id}}'>Delete</span>
+    </div>
+</article>
